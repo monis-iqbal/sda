@@ -26,11 +26,7 @@ public class AuthService {
             return null;
         }
 
-        System.out.println("[AuthService] User found: " + user.getEmail());
-        System.out.println("[AuthService] Stored password: " + user.getPassword());
-        System.out.println("[AuthService] Password received: " + request.getPassword());
         boolean match = user.getPassword().equals(request.getPassword());
-        System.out.println("[AuthService] Password match: " + match);
 
         if (!match) {
             return null;

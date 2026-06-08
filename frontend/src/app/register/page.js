@@ -43,7 +43,7 @@ export default function RegisterPage() {
     console.log("Register Payload:", payload);
 
     try {
-      const res = await fetch("http://localhost:8080/api/users", {
+      const res = await fetch("https://sda-production-4678.up.railway.app/api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

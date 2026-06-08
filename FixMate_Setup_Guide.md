@@ -103,13 +103,13 @@ Run application:
 Backend URL:
 
 ```txt
-http://localhost:8080
+https://sda-production-4678.up.railway.app
 ```
 
 Verify:
 
 ```txt
-http://localhost:8080/api/users
+https://sda-production-4678.up.railway.app/api/users
 ```
 
 If JSON appears, backend is working.

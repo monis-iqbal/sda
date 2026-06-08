@@ -1,5 +1,5 @@
 ### Create Service Request
-POST http://localhost:8080/api/requests
+POST https://sda-production-4678.up.railway.app/api/requests
 Content-Type: application/json
 
 {
@@ -12,7 +12,7 @@ Content-Type: application/json
 }
 
 ### Assign Worker
-POST http://localhost:8080/api/assignments
+POST https://sda-production-4678.up.railway.app/api/assignments
 Content-Type: application/json
 
 {
@@ -21,13 +21,13 @@ Content-Type: application/json
 }
 
 ### Get Request
-GET http://localhost:8080/users/admin/
+GET https://sda-production-4678.up.railway.app/users/admin/
 
 
 
 
 ### Start Work
-PUT http://localhost:8080/api/requests/1/status
+PUT https://sda-production-4678.up.railway.app/api/requests/1/status
 Content-Type: application/json
 
 {
@@ -36,7 +36,7 @@ Content-Type: application/json
 
 
 ### Complete Work
-PUT http://localhost:8080/api/requests/1/status
+PUT https://sda-production-4678.up.railway.app/api/requests/1/status
 Content-Type: application/json
 
 {
@@ -45,7 +45,7 @@ Content-Type: application/json
 
 
 ### Test Real Login
-POST http://localhost:8080/api/auth/login
+POST https://sda-production-4678.up.railway.app/api/auth/login
 Content-Type: application/json
 
 {
@@ -54,7 +54,7 @@ Content-Type: application/json
 }
 
 ### Test Seeded Worker Login
-POST http://localhost:8080/api/auth/login
+POST https://sda-production-4678.up.railway.app/api/auth/login
 Content-Type: application/json
 
 {
@@ -63,7 +63,7 @@ Content-Type: application/json
 }
 
 ### Create New Worker Directly
-POST http://localhost:8080/api/users
+POST https://sda-production-4678.up.railway.app/api/users
 Content-Type: application/json
 
 {
@@ -74,7 +74,7 @@ Content-Type: application/json
 }
 
 ### Login New Worker
-POST http://localhost:8080/api/auth/login
+POST https://sda-production-4678.up.railway.app/api/auth/login
 Content-Type: application/json
 
 {
@@ -82,5 +82,5 @@ Content-Type: application/json
   "password": "12345678"
 }
 
-GET http://localhost:8080/api/requests/client/3
+GET https://sda-production-4678.up.railway.app/api/requests/client/3
 Content-Type: application/json

@@ -1,43 +1,69 @@
-Create the actual files now.
+Fix Admin Services page and remove password logging issue.
 
-Project root:
+TASK 1: Fix Admin Services Page
 
-fixmate/
-├── frontend
-├── fixmate-backend
-├── docs
-│   └── diagrams
+Problem:
+frontend/src/app/admin/services/page.js currently uses dummyData.js and does not connect to backend.
 
-Create the folder:
-docs/diagrams
+Goal:
+Admin should be able to:
+1. View all services from database
+2. Add a new service
+3. Delete a service
 
-Then physically create these files:
+Backend endpoints:
+GET /api/services
+POST /api/services
+DELETE /api/services/{id}
 
-docs/diagrams/use-case-diagram.md
-docs/diagrams/class-diagram.md
-docs/diagrams/sequence-book-request.md
-docs/diagrams/sequence-assign-worker.md
-docs/diagrams/activity-diagram.md
-docs/diagrams/erd-diagram.md
-docs/diagrams/factory-pattern-diagram.md
-docs/diagrams/command-pattern-diagram.md
-docs/diagrams/null-object-pattern-diagram.md
-docs/diagrams/mediator-pattern-diagram.md
-docs/diagrams/observer-pattern-diagram.md
-docs/diagrams/singleton-pattern-diagram.md
-docs/diagrams/adapter-pattern-diagram.md
+Tasks:
+1. Remove dummyData import.
+2. Import api from "@/lib/axios".
+3. Fetch services using api.get("/services").
+4. Add loading and error states.
+5. Show services with:
+   - ID
+   - Name
+   - Description
+   - Action
+6. Add form/modal to create service:
+   - name
+   - description
+7. On submit use:
+   api.post("/services", { name, description })
+8. After add, refresh services.
+9. Delete service using:
+   api.delete(`/services/${id}`)
+10. Add confirm before delete.
+11. Keep orange/white theme.
+12. Do not break client booking page.
+13. Client booking should show newly added services from database.
+14. Do not use dummy data.
 
-For each file:
-1. Add title
-2. Add explanation
-3. Add Mermaid code
-4. Save the file
+TASK 2: Remove Password Logging
 
-Do not print the diagrams in chat.
-Actually create the files in the project.
+File:
+fixmate-backend/src/main/java/com/fixmate/service/AuthService.java
 
-After completion:
-Show me:
-- Folder tree
-- Files created
-- File count
+Remove any console logs that print:
+- stored password
+- received password
+- password match result
+
+Remove lines like:
+System.out.println("[AuthService] Stored password: " + user.getPassword());
+System.out.println("[AuthService] Password received: " + request.getPassword());
+System.out.println("[AuthService] Password match: " + match);
+
+Important:
+- Do not remove admin user.
+- Do not change DataSeeder.
+- Do not change login logic unless necessary.
+- Do not break authentication.
+- Only remove unsafe password logging.
+
+After changes, tell me:
+1. Files changed
+2. APIs used
+3. How admin can add/delete services
+4. Which password logs were removed
